@@ -1,0 +1,20 @@
+.box {
+  max-height: 266px;
+  max-width: 1240px;
+  background-image: url("../../assets/img/Imagen_Desktop.png");
+  /* Same colour as picture background */
+  background-color: #121214;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+
+@media only screen and (max-width: 640px) {
+  .box {
+    height: 40vh;
+    max-height: 320px;
+    background-image: url("../../assets/img/Imagen_Mobile.png");
+    background-size: cover;
+    background-position: top;
+  }
+}
