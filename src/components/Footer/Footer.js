@@ -1,10 +1,10 @@
-import Logo from "../../assets/logo/Logotipo.svg"
-import styles from "./Footer.module.css";
+import LogoDiv from "../UI/LogoDiv";
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <img src={Logo} alt="Lorem logo" className={styles.logo} />
+    <footer className="bg-primary min-w-full h-24 outline-black
+    ">
+      <LogoDiv className="pt-3" />
     </footer>
   );
 };

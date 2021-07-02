@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import Logo from "../../assets/logo/Logotipo.svg";
-
-import styles from "./Header.module.css";
+import LogoDiv from "../UI/LogoDiv";
 
 const Header = () => {
   return (
-    <header className={styles.header}>
+    <header className="bg-primary h-20 flex justify-between items-center">
       <nav>
-        <Link to="/"><img src={Logo} alt="Lorem logo" className={styles.logo} /></Link>
+        <Link to="/">
+          <LogoDiv />
+        </Link>
       </nav>
     </header>
   );
