@@ -1,0 +1,17 @@
+.header {
+  outline: 2px red solid;
+  background-color: #333;
+  height: 5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 6.5rem;
+  /* Margin just for strage sizes, layout with flexbox */
+  margin: 0.5rem;
+  /* This needs to be consistent with footer */
+  margin-left: 5.5rem;
+}
