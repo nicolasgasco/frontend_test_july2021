@@ -7,7 +7,7 @@ const LogoDiv = ({ className }) => {
       src={Logo}
       title="Lorem"
       alt="Lorem logo"
-      className={`w-24 ml-20 ${className}`}
+      className={`w-24 ${className}`}
     />
   );
 };
