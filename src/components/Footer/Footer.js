@@ -1,10 +1,13 @@
 import LogoDiv from "../UI/LogoDiv";
+import FullWidthWrapper from "../Wrappers/FullWidthWrapper";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary min-w-full h-24">
-      <LogoDiv className="pt-3" />
-    </footer>
+    <FullWidthWrapper>
+      <footer className="">
+        <LogoDiv className="pt-3" />{" "}
+      </footer>
+    </FullWidthWrapper>
   );
 };
 

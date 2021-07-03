@@ -1,17 +1,25 @@
 import { Link } from "react-router-dom";
 import LogoDiv from "../UI/LogoDiv";
+import FullWidthWrapper from "../Wrappers/FullWidthWrapper";
 
 const Header = () => {
   return (
-    <header className="bg-primary h-20 flex justify-between items-center">
-      <nav>
-        <h1>
-          <Link to="/">
-            <LogoDiv />
+    <FullWidthWrapper className="flex items-center h-full">
+      <header className="w-full">
+        <nav className="flex justify-between items-center">
+          <h1>
+            <Link to="/">
+              <LogoDiv />
+            </Link>
+          </h1>
+          <Link to="/auth/signin">
+            <button className="text-secondary-light font-medium mr-6">
+              Sign in
+            </button>
           </Link>
-        </h1>
-      </nav>
-    </header>
+        </nav>
+      </header>
+    </FullWidthWrapper>
   );
 };
 
