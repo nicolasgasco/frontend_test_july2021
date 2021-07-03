@@ -26,6 +26,13 @@
     /* Same as the blue parrot picture max size */
     max-width: 1240px;
   }
+
+  @media only screen and (max-width: 640px) {
+    .h2 {
+      font-size: 1.6rem;
+      line-height: 2rem;
+    }
+  }
 }
 
 body {
@@ -51,6 +58,4 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  outline: 2px red solid;
 }
