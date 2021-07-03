@@ -4,7 +4,7 @@ const colors = {
   ...defaultColors,
   ...{
     primary: {
-      darkest: "#565656",
+      darkest: "#333",
       DEFAULT: "#333",
       light: "#E9E9E9",
       lightest: "#F1F1F1",
