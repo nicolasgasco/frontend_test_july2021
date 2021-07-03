@@ -5,9 +5,9 @@ import { ArrowDown } from "heroicons-react";
 const PictureBox = () => {
   return (
     <section className={`h-96 flex flex-col justify-end ${classes.box}`}>
-      <div className="flex-1 w-52 ml-24 flex flex-col justify-center">
+      <div className="flex-1 w-40 sm:w-52 ml-6 sm:ml-24 flex flex-col justify-center">
         <h2 className="h2 text-white">Lorem ipsum</h2>
-        <p className="text-xl font-light break-all text-white">
+        <p className="text-lg sm:text-xl font-light break-all text-white">
           Dolor sit amet consectetur adipiscing elit.
         </p>
       </div>

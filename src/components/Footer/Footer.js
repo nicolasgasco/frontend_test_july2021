@@ -3,9 +3,9 @@ import FullWidthWrapper from "../Wrappers/FullWidthWrapper";
 
 const Footer = () => {
   return (
-    <FullWidthWrapper>
-      <footer className="">
-        <LogoDiv className="pt-3" />{" "}
+    <FullWidthWrapper className="h-32 sm:h-24">
+      <footer>
+        <LogoDiv className="pt-3" />
       </footer>
     </FullWidthWrapper>
   );

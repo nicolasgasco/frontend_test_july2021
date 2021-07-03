@@ -18,14 +18,14 @@ const ProductCard = ({ className }) => {
   });
   return (
     <div
-      className={`mr-6 ring-2 rounded-sm ring-primary-lightest w-4/12 flex p-10`}
+      className={`sm:mr-6 rounded-sm sm:ring-2 ring-primary-lightest sm:w-4/12 flex items-center pl-4 py-9 sm:p-10`}
     >
       <div className="w-5/12 p-0 m-0">
-        <img src={PhonePicture} className={`-ml-5 ${classes.picture}`} />
+        <img src={PhonePicture} className={`-ml-5 ${classes.picture}`} alt=""/>
       </div>
       <div className="w-7/12">
         <h4 className="h4 text-primary-darkest -mt-2 mb-2">Product 1</h4>
-        <p className="text-primary-darkest font-medium text-md">
+        <p className="text-primary-darkest font-medium text-sm sm:text-base">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat eaque
           numquam alias provident.
         </p>
