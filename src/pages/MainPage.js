@@ -7,7 +7,7 @@ const MainPage = () => {
       <PictureBox />
       <section className="mt-12">
         <h3 className="h3 tracking-tight mb-6">Featured products</h3>
-        <div className="flex justify-start align-middle">
+        <div className="flex justify-start align-middle mb-20">
           <ProductCard />
           <ProductCard />
         </div>
