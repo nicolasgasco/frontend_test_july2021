@@ -25,7 +25,11 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: colors,
-    extend: {},
+    extend: {
+      screens: {
+        lim: "1240px",
+      },
+    },
   },
   variants: {
     extend: {
