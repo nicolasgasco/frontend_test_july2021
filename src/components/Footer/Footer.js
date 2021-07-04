@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <FullWidthWrapper className="h-32 sm:h-24">
       <footer>
-        <LogoDiv className="pt-3" />
+        <LogoDiv screenReader={false} className="pt-3" />
       </footer>
     </FullWidthWrapper>
   );
