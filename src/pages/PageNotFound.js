@@ -7,7 +7,7 @@ const ProductsPage = () => {
   return (
     <section className="p-10">
       <button
-        onClick={() => history.goBack()}
+        onClick={() => history.push("/")}
         class="text-primary-darkest flex items-center mb-16"
       >
         <ArrowLeft aria-hidden="true" className="inline mr-3 w-5" />

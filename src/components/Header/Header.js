@@ -1,35 +1,49 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
+
+// Redux state
+import { useSelector, useDispatch } from "react-redux";
+import { menuActions } from "../../store/menu";
+
 import LogoDiv from "../UI/LogoDiv";
 import FullWidthWrapper from "../Wrappers/FullWidthWrapper";
+import MenuOverlay from "../Menu/MenuOverlay";
 
 import { Menu, X } from "heroicons-react";
-import { useEffect, useState } from "react";
-import MenuOverlay from "../Menu/MenuOverlay";
 
 const Header = () => {
   // Used to hide Sign in button when in signin page
   const location = useLocation();
+  // Used to go back to previous page when closign menu while signing in
+  const history = useHistory();
 
-  // For normal state
-  const [isOpen, setIsOpen] = useState(false);
-  // For mobile menu
-  const [mobileOpen, setMobileOpen] = useState(false);
+  // Redux state for opening parts of menus
+  const menuOpen = useSelector((state) => state.menu.menuOpen);
+  const dispatch = useDispatch();
 
-  // Toggle mobile menu
-  const handleMobileMenu = () => {
-    setMobileOpen((prevState) => !prevState);
+  const openMobileMenu = () => {
+    dispatch(menuActions.toggleMenu(true));
+  };
+
+  const closeMobileMenu = () => {
+    dispatch(menuActions.toggleMenu(false));
+    if (location.pathname === "/auth/signin") {
+      // Closing signin as well
+      dispatch(menuActions.toggleSignin(false));
+      // Going back to previous page in case it was in signin
+      history.goBack();
+    }
   };
 
   // Three lines for opening, x for closing
   let mobileButtons = (
-    <button type="button" onClick={() => setIsOpen((prevState) => !prevState)}>
-      <span className="sr-only">{isOpen ? "Close menu" : "Open menu"}</span>
-      {isOpen ? (
-        <X className="text-white" onClick={handleMobileMenu} />
+    <div type="button">
+      <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
+      {menuOpen ? (
+        <X className="text-white" onClick={closeMobileMenu} />
       ) : (
-        <Menu className="text-white" onClick={handleMobileMenu} />
+        <Menu className="text-white" onClick={openMobileMenu} />
       )}
-    </button>
+    </div>
   );
 
   return (
@@ -38,7 +52,7 @@ const Header = () => {
         <header className="w-full">
           <nav className="flex justify-between items-center">
             <h1>
-              <Link to="/">
+              <Link to="/" onClick={closeMobileMenu}>
                 <LogoDiv />
               </Link>
             </h1>
@@ -56,7 +70,7 @@ const Header = () => {
           </nav>
         </header>
       </FullWidthWrapper>
-      {mobileOpen && <MenuOverlay setMobileOpen={setMobileOpen} />}
+      {menuOpen && <MenuOverlay />}
     </>
   );
 };

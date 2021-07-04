@@ -1,21 +1,29 @@
-import { Link, useHistory, useLocation } from "react-router-dom";
-import { ChevronUp, ChevronDown } from "heroicons-react";
+import { Link, useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const AuthBottomBar = ({ setMobileOpen, className }) => {
-  const history = useHistory();
-  const location = useLocation();
+// Redux state
+import { useSelector, useDispatch } from "react-redux";
+import { menuActions } from "../../store/menu";
 
-  const [signinOpen, setSigninOpen] = useState(false);
+import { ChevronUp, ChevronDown } from "heroicons-react";
+
+const AuthBottomBar = ({ className }) => {
+  const history = useHistory();
+
+  // Redux state for opening signin overlay
+  const signinOpen = useSelector((state) => state.menu.signinOpen);
+  const dispatch = useDispatch();
 
   const openSigninMobile = () => {
     history.push("/auth/signin");
-    setMobileOpen();
+    dispatch(menuActions.toggleSignin(true));
   };
 
-  useEffect(() => {
-    if (location.pathname === "/auth/signin") setSigninOpen(true);
-  }, [location.pathname]);
+  const closeSigninMobile = () => {
+    history.goBack();
+    dispatch(menuActions.toggleSignin(false));
+  };
+
   return (
     <div className={`w-full ${className}`}>
       <div className=" bg-white flex items-center justify-between mr-0 px-4 py-3">
@@ -26,7 +34,7 @@ const AuthBottomBar = ({ setMobileOpen, className }) => {
             to="/auth/signin"
             className="text-secondary font-bold text-2xl"
             onClick={() => {
-              setMobileOpen();
+              dispatch(menuActions.toggleSignin(true));
             }}
           >
             Sign in
@@ -38,7 +46,7 @@ const AuthBottomBar = ({ setMobileOpen, className }) => {
               <span className="sr-only">Close signin</span>
               <ChevronDown
                 className="text-secondary"
-                onClick={openSigninMobile}
+                onClick={closeSigninMobile}
               />
             </>
           ) : (
