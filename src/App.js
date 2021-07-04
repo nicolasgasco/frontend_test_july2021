@@ -4,7 +4,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import MainWrapper from "./components/Wrappers/MainWrapper";
 import MainPage from "./pages/MainPage";
-import ProductsPage from "./pages/ProductsPage";
+import PageNotFound from "./pages/PageNotFound";
 import SigninPage from "./pages/SigninPage";
 
 function App() {
@@ -18,15 +18,27 @@ function App() {
           </MainWrapper>
         </Route>
 
-        <Route exact path="/products">
-          <MainWrapper>
-            <ProductsPage />
-          </MainWrapper>
-        </Route>
-
         <Route exact path="/auth/signin">
           <MainWrapper>
             <SigninPage />
+          </MainWrapper>
+        </Route>
+
+        <Route exact path="/products">
+          <MainWrapper>
+            <PageNotFound />
+          </MainWrapper>
+        </Route>
+
+        <Route exact path="/about">
+          <MainWrapper>
+            <PageNotFound />
+          </MainWrapper>
+        </Route>
+
+        <Route exact path="/contact">
+          <MainWrapper>
+            <PageNotFound />
           </MainWrapper>
         </Route>
 
