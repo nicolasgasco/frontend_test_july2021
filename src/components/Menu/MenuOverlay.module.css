@@ -1,0 +1,5 @@
+.dropdown {
+  opacity: 0;
+  height: 0vh;
+  transition: opacity 0.75s, height 0.75s;
+}
