@@ -48,7 +48,7 @@ const Header = () => {
 
   return (
     <>
-      <FullWidthWrapper className="sm:flex sm:items-center">
+      <FullWidthWrapper className="sm:flex sm:items-center z-50">
         <header className="w-full">
           <nav className="flex justify-between items-center">
             <h1>

@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 
-export const users = [
+export const USERS = [
   {
     _id: nanoid(),
     username: "test",

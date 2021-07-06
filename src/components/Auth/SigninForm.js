@@ -7,7 +7,7 @@ const SigninForm = () => {
     <form className="mt-10" onSubmit={handleFormSubmit}>
       <div className="mb-8">
         <label
-          for="username"
+          htmlFor="username"
           className="text-md font-bold text-primary-darkest"
         >
           Username
@@ -17,12 +17,13 @@ const SigninForm = () => {
           id="username"
           name="username"
           autoComplete="username"
+          required
           className="w-full ring-1 ring-primary-darkest h-12 px-3 tracking-widest"
         />
       </div>
       <div className="mb-8">
         <label
-          for="username"
+          htmlFor="username"
           className="text-md font-bold text-primary-darkest"
         >
           Password
@@ -32,6 +33,7 @@ const SigninForm = () => {
           id="password"
           name="password"
           autoComplete="current-password"
+          required
           className="w-full ring-1 ring-primary-darkest h-12 px-3 tracking-widest"
         />
       </div>
