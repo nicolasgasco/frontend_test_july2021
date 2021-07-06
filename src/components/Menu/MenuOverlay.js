@@ -1,18 +1,15 @@
 import { Link } from "react-router-dom";
 
 // Redux state
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { menuActions } from "../../store/menu";
 
 import AuthBottomBar from "./AuthBottomBar";
 
-// import classes from "./MenuOverlay.module.css";
-
-const MenuOverlay = ({ className, setMobileOpen }) => {
+const MenuOverlay = ({ className }) => {
   const menuItems = ["Products", "About us", "Contact"];
 
   // Redux state for opening parts of menus
-  const menuOpen = useSelector((state) => state.menu.menuOpen);
   const dispatch = useDispatch();
 
   const closeMenuOnLink = () => {
@@ -35,12 +32,12 @@ const MenuOverlay = ({ className, setMobileOpen }) => {
 
   return (
     <div
-      className={`sm:hidden fixed top-12 w-screen h-full z-50 bg-primary-darkest bg-opacity-95 ${className}`}
+      className={`sm:hidden fixed top-12 w-screen h-full z-40 bg-primary-darkest bg-opacity-95 ${className}`}
     >
       <nav className="w-full flex flex-col items-center mt-12">
         {showMenuItems}
       </nav>
-      <AuthBottomBar setMobileOpen={setMobileOpen} className="fixed bottom-0" />
+      <AuthBottomBar className="fixed bottom-0" />
     </div>
   );
 };
