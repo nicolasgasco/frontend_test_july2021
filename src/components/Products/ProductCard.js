@@ -1,35 +1,48 @@
-import PhonePicture from "../../assets/img/iphone-silver.png";
+import { useState } from "react";
 
-import classes from "./ProductCard.module.css";
+const ProductCard = ({ className, product }) => {
+  // Possible product colors
+  const [colors, ] = useState(() => product.available_colors);
 
-const ProductCard = ({ className }) => {
-  const colors = ["gray", "pink"];
+  // Utility function for formatting text
+  const capitalizeFirstLetter = (word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  };
 
+  // Showing color balls, with border if it's the actual product color
   const showColors = colors.map((color) => {
+    // Using custom colors added to Tailwind config file
     return (
       <button
-        className={`bg-product-${color} rounded-full mx-2 h-6 w-6 focus:ring-2 focus:ring-primary-darkest focus:outline-none hover:ring-2 hover:ring-primary-darkest`}
+        key={`button-color-${color}`}
+        className={`bg-product-${color} ${
+          product.color === color && "ring-1 ring-primary-darkest "
+        } rounded-full mx-2 h-6 w-6 focus:outline-none`}
       >
-        <span className="sr-only">{`${
-          color.charAt(0).toUpperCase() + color.slice(1)
-        }`}</span>
+        <span className="sr-only">{`${capitalizeFirstLetter(color)}`}</span>
       </button>
     );
   });
+
   return (
     <div
       className={`sm:mr-6 rounded-sm sm:ring-2 ring-primary-lightest sm:w-4/12 flex items-center pl-4 py-9 sm:p-10`}
     >
       <div className="w-5/12 p-0 m-0">
-        <img src={PhonePicture} className={`-ml-5 ${classes.picture}`} alt=""/>
+        <img
+          src={product.picture.uri}
+          className="-ml-5 scale-115"
+          alt={product.picture.alt}
+        />
       </div>
       <div className="w-7/12">
-        <h4 className="h4 text-primary-darkest -mt-2 mb-2">Product 1</h4>
-        <p className="text-primary-darkest font-medium text-sm sm:text-base">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat eaque
-          numquam alias provident.
+        <h4 className="h4 text-primary-darkest -mt-2 mb-1">
+          {capitalizeFirstLetter(product.name)}
+        </h4>
+        <p className="text-primary-darkest text-sm sm:text-sm">
+          {capitalizeFirstLetter(product.description)}
         </p>
-        <div className="mt-3 flex items-center">
+        <div className="mt-1 flex items-center">
           <p className="font-bold text-primary-darkest text-md">Color:</p>
           <div className="ml-3">{showColors}</div>
         </div>
