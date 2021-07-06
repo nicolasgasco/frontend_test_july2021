@@ -14,7 +14,7 @@ const SigninPage = () => {
           <div className="mb-10">
             <button
               onClick={() => history.goBack()}
-              class="text-primary-darkest flex items-center"
+              className="text-primary-darkest flex items-center"
             >
               <ArrowLeft aria-hidden="true" className="inline mr-3 w-5" />
               <span className="font-bold text-lg tracking-tight">Go back</span>
