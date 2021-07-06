@@ -13,10 +13,8 @@ const colors = {
       DEFAULT: "#5596DF",
       light: "#96C7FF",
     },
-    product: {
-      pink: "#F5E5DA",
-      gray: "#E1E1D7",
-    },
+    "product-pink": "#F5E5DA",
+    "product-gray": "#E1E1D7",
   },
 };
 
