@@ -12,14 +12,14 @@ const menuSlice = createSlice({
   reducers: {
     toggleMenu(state, action) {
       // Sometimes you just toggles, other times you want direct control of state
-      if (action.payload) {
+      if (action.payload !== undefined) {
         state.menuOpen = action.payload;
       } else {
         state.menuOpen = !state.menuOpen;
       }
     },
     toggleSignin(state, action) {
-      if (action.payload) {
+      if (action.payload !== undefined) {
         state.signinOpen = action.payload;
       } else {
         state.signinOpen = !state.signinOpen;
