@@ -1,6 +1,14 @@
+import { useRef } from "react";
+
 const SigninForm = () => {
+  const username = useRef();
+  const password = useRef();
+
+  // Mocking login
   const handleFormSubmit = (e) => {
     e.preventDefault();
+
+    // Here goes the login logic
   };
 
   return (
@@ -18,6 +26,7 @@ const SigninForm = () => {
           name="username"
           autoComplete="username"
           required
+          ref={username}
           className="w-full ring-1 ring-primary-darkest h-12 px-3 tracking-widest"
         />
       </div>
@@ -34,6 +43,7 @@ const SigninForm = () => {
           name="password"
           autoComplete="current-password"
           required
+          ref={password}
           className="w-full ring-1 ring-primary-darkest h-12 px-3 tracking-widest"
         />
       </div>
