@@ -1,4 +1,3 @@
-import { ChevronDown } from "heroicons-react";
 import SigninForm from "../Auth/SigninForm";
 import AuthBottomBar from "./AuthBottomBar";
 
