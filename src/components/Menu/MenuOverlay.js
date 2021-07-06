@@ -12,6 +12,7 @@ const MenuOverlay = ({ className }) => {
   // Redux state for opening parts of menus
   const dispatch = useDispatch();
 
+  // Closing menu when clicking on links
   const closeMenuOnLink = () => {
     dispatch(menuActions.toggleMenu(false));
   };

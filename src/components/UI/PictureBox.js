@@ -1,5 +1,7 @@
-import classes from "./PictureBox.module.css";
 import { Link } from "react-router-dom";
+
+import classes from "./PictureBox.module.css";
+
 import { ArrowDown } from "heroicons-react";
 
 const PictureBox = () => {

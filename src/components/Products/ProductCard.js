@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const ProductCard = ({ className, product }) => {
+const ProductCard = ({ product }) => {
   // Possible product colors
-  const [colors, ] = useState(() => product.available_colors);
+  const [colors, setColors] = useState(() => product.available_colors);
 
   // Utility function for formatting text
   const capitalizeFirstLetter = (word) => {

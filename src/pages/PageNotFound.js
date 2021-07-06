@@ -1,13 +1,18 @@
-import { ArrowLeft } from "heroicons-react";
 import { useHistory } from "react-router-dom";
+
+import { ArrowLeft } from "heroicons-react";
 
 const ProductsPage = () => {
   const history = useHistory();
 
+  const handleGoToHome = () => {
+    history.push("/");
+  };
+
   return (
     <section className="p-10">
       <button
-        onClick={() => history.push("/")}
+        onClick={handleGoToHome}
         className="text-primary-darkest flex items-center mb-16"
       >
         <ArrowLeft aria-hidden="true" className="inline mr-3 w-5" />

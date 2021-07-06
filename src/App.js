@@ -4,7 +4,10 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 
-const MainWrapper = React.lazy(() => import("./components/Wrappers/MainWrapper"));
+// Lazy import for optimizing renders
+const MainWrapper = React.lazy(() =>
+  import("./components/Wrappers/MainWrapper")
+);
 const MainPage = React.lazy(() => import("./pages/MainPage"));
 const PageNotFound = React.lazy(() => import("./pages/PageNotFound"));
 const SigninPage = React.lazy(() => import("./pages/SigninPage"));
