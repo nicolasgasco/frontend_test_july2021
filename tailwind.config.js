@@ -13,13 +13,20 @@ const colors = {
       DEFAULT: "#5596DF",
       light: "#96C7FF",
     },
-    "product-pink": "#F5E5DA",
-    "product-gray": "#E1E1D7",
+    product: {
+      pink: "#F5E5DA",
+      gray: "#E1E1D7",
+    },
   },
 };
 
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  purge: {
+    content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+    options: {
+      safelist: ["product", "product-gray", "product-pink"],
+    },
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: colors,
