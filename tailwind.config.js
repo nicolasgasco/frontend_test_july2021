@@ -24,7 +24,13 @@ module.exports = {
   purge: {
     content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
     options: {
-      safelist: ["product", "product-gray", "product-pink"],
+      safelist: [
+        "product",
+        "product-gray",
+        "product-pink",
+        "bg-product-gray",
+        "bg-product-pink",
+      ],
     },
   },
   darkMode: false, // or 'media' or 'class'
