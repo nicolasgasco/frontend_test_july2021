@@ -8,7 +8,7 @@ const LogoDiv = ({ className, screenReader = true }) => {
       title="Lorem"
       // For the footer, I don't want the logo to be visible for screen readers
       alt={screenReader ? "Lorem logo" : ""}
-      className={`sm:pl-3 lim:pl-0 w-32 ${className}`}
+      className={`sm:pl-3 lim:pl-0 sm:w-32 ${className}`}
     />
   );
 };
