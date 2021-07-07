@@ -3,6 +3,29 @@
 @tailwind utilities;
 
 @layer utilities {
+  @font-face {
+    font-family: "Heebo";
+    src: url("./assets/fonts/Heebo-VariableFont_wght.ttf");
+  }
+
+  @font-face {
+    font-family: "Heebo";
+    font-weight: 300;
+    src: url("./assets/fonts/static/Heebo-Light.ttf");
+  }
+
+  @font-face {
+    font-family: "Heebo";
+    font-weight: 200;
+    src: url("./assets/fonts/static/Heebo-ExtraLight.ttf");
+  }
+
+  @font-face {
+    font-family: "Heebo";
+    font-weight: 800;
+    src: url("./assets/fonts/static/Heebo-ExtraBold.ttf");
+  }
+
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Heebo", "Segoe UI",
@@ -38,7 +61,7 @@
   .h3 {
     font-size: 1.5rem;
     line-height: 2rem;
-    font-weight: 700;
+    font-weight: 900;
   }
 
   .h4 {
@@ -58,9 +81,4 @@
       line-height: 2rem;
     }
   }
-}
-
-@font-face {
-  font-family: "Heebo";
-  src: url("./assets/fonts/Heebo-VariableFont_wght.ttf");
 }
