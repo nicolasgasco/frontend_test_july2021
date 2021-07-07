@@ -20,7 +20,7 @@ const MainPage = () => {
   return (
     <>
       <PictureBox />
-      <section className="mt-12 px-6 sm:px-0">
+      <section className="mt-12 px-6 sm:px-3 lim:px-0">
         <h3 className="h3 text-primary-darkest tracking-tight mb-2 sm:mb-6">
           Featured products
         </h3>

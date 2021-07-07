@@ -49,7 +49,7 @@ const SigninForm = () => {
       </div>
       <button
         type="submit"
-        className="w-full bg-secondary text-white font-bold rounded-md h-14 hover:bg-secondary-light"
+        className="w-full text-lg bg-secondary text-white font-bold rounded-md h-14 hover:bg-secondary-light"
       >
         Sign in
       </button>

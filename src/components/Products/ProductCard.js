@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
         key={`button-color-${color}`}
         className={`bg-product-${color} ${
           product.color === color && "ring-1 ring-primary-darkest "
-        } rounded-full mx-2 h-6 w-6 focus:outline-none`}
+        } rounded-full mx-2 h-5 w-5 focus:outline-none`}
       >
         <span className="sr-only">{`${capitalizeFirstLetter(color)}`}</span>
       </button>
@@ -31,7 +31,7 @@ const ProductCard = ({ product }) => {
       <div className="w-5/12 p-0 m-0">
         <img
           src={product.picture.uri}
-          className="-ml-5 scale-115"
+          className="-ml-5"
           alt={product.picture.alt}
         />
       </div>
@@ -43,8 +43,8 @@ const ProductCard = ({ product }) => {
           {capitalizeFirstLetter(product.description)}
         </p>
         <div className="mt-1 flex items-center">
-          <p className="font-bold text-primary-darkest text-md">Color:</p>
-          <div className="ml-3">{showColors}</div>
+          <p className="font-bold text-primary-darkest text-md inline-block">Color:</p>
+          <div className="ml-3 flex items-center">{showColors}</div>
         </div>
       </div>
     </div>

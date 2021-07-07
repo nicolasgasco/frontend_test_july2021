@@ -60,7 +60,7 @@ const Header = () => {
               // Hidden for mobile devices
               <div className="hidden sm:flex">
                 <Link to="/auth/signin">
-                  <button className="text-secondary-light font-medium sm:mr-6">
+                  <button className="text-secondary-light font-bold text-lg sm:mr-6">
                     Sign in
                   </button>
                 </Link>
